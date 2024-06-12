@@ -31,7 +31,7 @@ static class Program
             }
             else
             {
-                daysInMonth = 28;
+                daysInMonth = 31;
             }
         }
         else
@@ -44,7 +44,7 @@ static class Program
     public static bool IsValidDate(int day, int month, int year)
     {
         int daysInMonth = DaysInMonth(month, year);
-        if (month >= 1 && month <= 12)
+        if (month >= 0 && month <= 12)
         {
             if (day >= 1)
             {
@@ -71,33 +71,41 @@ static class Program
     {
         int parsedDay, parsedMonth, parsedYear;
 
-        if (!int.TryParse(day, out parsedDay) || parsedDay < 1 || parsedDay > 31)
+        if (!int.TryParse(day, out parsedDay) || parsedDay < 1 || parsedDay > 30)
         {
-            MessageBox.Show("Input data for Day is incorrect format or out of range");
+            // MessageBox.Show("Input data for Day is incorrect format or out of range");
             return false;
         }
 
         if (!int.TryParse(month, out parsedMonth) || parsedMonth < 1 || parsedMonth > 12)
         {
-            MessageBox.Show("Input data for Month is incorrect format or out of range");
+            // MessageBox.Show("Input data for Month is incorrect format or out of range");
             return false;
         }
 
-        if (!int.TryParse(year, out parsedYear) || parsedYear < 1 || parsedYear > 9999)
+        if (!int.TryParse(year, out parsedYear) || parsedYear < 0 || parsedYear > 9999)
         {
-            MessageBox.Show("Input data for Year is incorrect format or out of range");
+            // MessageBox.Show("Input data for Year is incorrect format or out of range");
             return false;
         }
 
         if (IsValidDate(parsedDay, parsedMonth, parsedYear))
         {
-            MessageBox.Show($"{day}/{month}/{year} is a valid date");
+            // MessageBox.Show($"{day}/{month}/{year} is a valid date");
             return true;
         }
         else
         {
-            MessageBox.Show($"{day}/{month}/{year} is NOT a valid date");
+            // MessageBox.Show($"{day}/{month}/{year} is NOT a valid date");
             return false;
         }
     }
+
+    // [STAThread]
+    // static void Main()
+    // {
+    //     Application.EnableVisualStyles();
+    //     Application.SetCompatibleTextRenderingDefault(false);
+    //     Application.Run(new Date());
+    // }
 }
