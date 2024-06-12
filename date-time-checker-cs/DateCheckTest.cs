@@ -294,4 +294,218 @@ public class DateTests
         // Assert
         Assert.IsFalse(result);
     }
+
+    // For Lab2
+    [Test]
+    public void UTCID01()
+    {
+        // Arrange
+        string day = "1";
+        string month = "1";
+        string year = "2020";
+
+        // Act
+        bool result = Program.CheckDate(day, month, year);
+
+        // Assert
+        Assert.IsTrue(result);
+    }
+    [Test]
+    public void UTCID02()
+    {
+        // Arrange
+        string day = "30";
+        string month = "12";
+        string year = "2000";
+
+        // Act
+        bool result = Program.CheckDate(day, month, year);
+
+
+
+        // Assert
+        Assert.IsTrue(result);
+    }
+    [Test]
+    public void UTCID03()
+    {
+        // Arrange
+        string day = "28";
+        string month = "4";
+        string year = "2009";
+
+        // Act
+        bool result = Program.CheckDate(day, month, year);
+
+        // Assert
+        Assert.IsTrue(result);
+    }
+    [Test]
+    public void UTCID04()
+    {
+        // Arrange
+        string day = "29";
+        string month = "6";
+        string year = "2000";
+
+        // Act
+        bool result = Program.CheckDate(day, month, year);
+
+        // Assert
+        Assert.IsTrue(result);
+    }
+    [Test]
+    public void UTCID05()
+    {
+        // Arrange
+        string day = "1";
+        string month = "12";
+        string year = "2020";
+
+        // Act
+        bool result = Program.CheckDate(day, month, year);
+
+        // Assert
+        Assert.IsTrue(result);
+    }
+    [Test]
+    public void UTCID06()
+    {
+        // Arrange
+        string day = "13";
+        string month = "1";
+        string year = "2000";
+
+        // Act
+        bool result = Program.CheckDate(day, month, year);
+
+        // Assert
+        Assert.IsFalse(result);
+    }
+    [Test]
+    public void UTCID07()
+    {
+        // Arrange
+        string day = "30";
+        string month = "2";
+        string year = "2009";
+
+        // Act
+        bool result = Program.CheckDate(day, month, year);
+
+        // Assert
+        Assert.IsFalse(result);
+    }
+    [Test]
+    public void UTCID08()
+    {
+        // Arrange
+        string day = "31";
+        string month = "4";
+        string year = "2020";
+
+        // Act
+        bool result = Program.CheckDate(day, month, year);
+
+        // Assert
+        Assert.IsFalse(result);
+    }
+    [Test]
+    public void UTCID09()
+    {
+        // Arrange
+        string day = "31";
+        string month = "6";
+        string year = "2009";
+
+        // Act
+        bool result = Program.CheckDate(day, month, year);
+
+        // Assert
+        Assert.IsFalse(result);
+    }
+    [Test]
+    public void UTCID10()
+    {
+        // Arrange
+        string day = "0";
+        string month = "2";
+        string year = "2020";
+    
+        // Act
+        bool result = Program.CheckDate(day, month, year);
+    
+        // Assert
+        Assert.IsFalse(result);
+    }
+    [Test]
+    public void UTCID11()
+    {
+        // Arrange
+        string day = "10";
+        string month = "0";
+        string year = "0001";
+
+        // Act
+        bool result = Program.CheckDate(day, month, year);
+
+        // Assert
+        Assert.IsFalse(result);
+    }
+    [Test]
+    public void UTCID12()
+    {
+        // Arrange
+        string day = "31";
+        string month = "12";
+        string year = "9999";
+
+        // Act
+        bool result = Program.CheckDate(day, month, year);
+
+        // Assert
+        Assert.IsTrue(result);
+    }
+    [Test]
+    public void UTCID13()
+    {
+        // Arrange
+        string day = "29";
+        string month = "2";
+        string year = "1900";
+
+        // Act
+        bool result = Program.CheckDate(day, month, year);
+
+        // Assert
+        Assert.IsTrue(result);
+    }
+    [Test]
+    public void UTCID14()
+    {
+        // Arrange
+        string day = "29";
+        string month = "2";
+        string year = "2000";
+
+        // Act
+        bool result = Program.CheckDate(day, month, year);
+
+        // Assert
+        Assert.IsTrue(result);
+    }
+    [Test]
+    public void UTCID15()
+    {
+        // Arrange
+        string day = "29";
+        string month = "2";
+        string year = "2400";
+
+        // Act
+        bool result = Program.CheckDate(day, month, year);
+
+        // Assert
+        Assert.IsTrue(result);
+    }
 }
